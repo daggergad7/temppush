@@ -1,8 +1,5 @@
 var express     = require("express"),
-    app         = express(),
-    bodyParser  = require("body-parser"),
-    flash        = require("connect-flash"),
-    session = require("express-session");
+    app         = express();
     var favicon = require('serve-favicon');
 
     var land    = require("./routes/land");
@@ -15,6 +12,6 @@ var express     = require("express"),
 
     app.use("/", land);
 
-    app.listen(3000 || process.env.PORT, process.env.IP, function(){
-        console.log("The klavona Server Has Started!");
-     });
+    const PORT = process.env.PORT || 5000;
+
+    app.listen(PORT);
